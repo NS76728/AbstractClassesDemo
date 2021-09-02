@@ -46,7 +46,34 @@ namespace ConsoleUI
 
             // Call each of the drive methods for one car and one motorcycle
 
-            #endregion            
+            #endregion
+
+            var vehicles = new List<Vehicle>();
+
+            var car1 = new Car() {Year = 2000, Make="Ford", Model= "Focus", HasTrunk = true};
+            var cycle1 = new Motorcycle() { Year = 2010, Make = "Harley", Model = "Cruiser", HasSideCar = true};
+            var vehicle1 = new Car() { Year = 2005, Make = "Honda", Model = "Accord", HasTrunk = true };
+            var vehicle2 = new Motorcycle() { Year = 1998, Make = "Honda", Model = "Sports bike", HasSideCar = false };
+
+            vehicles.Add(car1);
+            vehicles.Add(cycle1);
+            vehicles.Add(vehicle1);
+            vehicles.Add(vehicle2);
+
+            foreach(Vehicle vehicle in vehicles)
+            {
+                vehicle.getStats();
+
+            }
+            Console.WriteLine("-------------------");
+            
+            car1.DriveAbstract();
+            car1.DriveVirtual();
+            cycle1.DriveAbstract();
+            cycle1.DriveVirtual();
+           
+
+
             Console.ReadLine();
         }
     }
